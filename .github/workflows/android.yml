@@ -31,3 +31,11 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Depth-Clock-APK
+          path: |
+            **/build/outputs/apk/**/*.apk
+          if-no-files-found: error
